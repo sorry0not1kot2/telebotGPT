@@ -2,10 +2,9 @@ import os
 import asyncio
 from telebot.async_telebot import AsyncTeleBot
 import handlers
-import db
 
 # Настройка бота
-BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
+BOT_TOKEN = os.getenv('BOT_TOKEN')
 bot = AsyncTeleBot(BOT_TOKEN)
 
 # Обработчик команды /start
@@ -18,7 +17,6 @@ bot.register_message_handler(handlers.handle_text, content_types=['text'])
 
 # Асинхронная функция main для запуска бота
 async def main():
-    await db.connect()  # Подключение к базе данных
     await bot.polling(none_stop=True, timeout=60)
 
 # Запуск бота
