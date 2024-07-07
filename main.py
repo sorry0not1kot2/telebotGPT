@@ -1,3 +1,4 @@
+# файл main.py
 import os
 import asyncio
 from telebot.async_telebot import AsyncTeleBot
