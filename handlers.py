@@ -1,6 +1,7 @@
 # файл handlers.py
 import g4f
 import translations
+import logging
 
 # Функция для обработки текстовых сообщений
 async def handle_text(bot, message):
@@ -11,10 +12,9 @@ async def handle_text(bot, message):
             model="gpt-4o",
             messages=[{"role": "user", "content": query}],
         )
-        
-        # Отправляем ответ пользователю
-        await bot.send_message(message.chat.id, response)
+       
+        # Отправляем ответ пользователю с парсингом Markdown V2
+        await bot.send_message(message.chat.id, response, parse_mode='MarkdownV2')
     except Exception as e:
-        # Отправляем сообщение об ошибке, если произошла исключительная ситуация
-        await bot.send_message(message.chat.id, f"{translations['error']}{str(e)}")
-
+        logging.error(f"Ошибка при обработке сообщения: {e}")
+        # Отправ
