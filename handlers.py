@@ -19,8 +19,8 @@ async def handle_text(bot, message):
             # Отправляем первый вариант ответа пользователю
             await bot.send_message(message.chat.id, response['choices'][0]['message']['content'])
         else:
-            # Отправляем сообщение о некорректном ответе с указанием типа данных и самого ответа
-            await bot.send_message(message.chat.id, f"Некорректный ответ от GPT ({response_type}): {response}")
+            # Отправляем сообщение о некорректном ответе с указанием типа данных и самого ответа, отформатированного в Markdown
+            await bot.send_message(message.chat.id, f"Некорректный ответ от GPT ({response_type}): ```{response}```", parse_mode='Markdown')
     except Exception as e:
         # Отправляем сообщение об ошибке, если произошла исключительная ситуация
         await bot.send_message(message.chat.id, f"{translations['error']}{str(e)}")
