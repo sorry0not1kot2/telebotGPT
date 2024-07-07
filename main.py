@@ -4,7 +4,7 @@ from telebot.async_telebot import AsyncTeleBot
 import handlers
 
 # Настройка бота
-BOT_TOKEN = os.getenv('BOT_TOKEN')
+BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 bot = AsyncTeleBot(BOT_TOKEN)
 
 # Обработчик команды /start
