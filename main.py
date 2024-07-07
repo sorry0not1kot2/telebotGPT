@@ -4,7 +4,7 @@ import asyncio
 import logging
 from telebot.async_telebot import AsyncTeleBot
 import handlers
-import translations  # Импортируем translations
+from translations import translations  # Импортируем translations как словарь
 
 # Настройка логирования
 logging.basicConfig(level=logging.INFO)
