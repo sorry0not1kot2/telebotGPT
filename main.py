@@ -5,7 +5,7 @@ import handlers
 import db
 
 # Настройка бота
-BOT_TOKEN = os.getenv('BOT_TOKEN')
+BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 bot = AsyncTeleBot(BOT_TOKEN)
 
 # Обработчик команды /start
