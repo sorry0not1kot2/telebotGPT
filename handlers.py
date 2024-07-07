@@ -1,3 +1,4 @@
+# файл handlers.py
 import g4f
 import translations
 
@@ -11,16 +12,9 @@ async def handle_text(bot, message):
             messages=[{"role": "user", "content": query}],
         )
         
-        # Определяем тип данных ответа
-        response_type = type(response).__name__
-        
-        # Проверяем, является ли ответ словарем и содержит ли он ключ 'choices'
-        if isinstance(response, dict) and 'choices' in response and len(response['choices']) > 0:
-            # Отправляем первый вариант ответа пользователю
-            await bot.send_message(message.chat.id, response['choices'][0]['message']['content'])
-        else:
-            # Отправляем сообщение о некорректном ответе с указанием типа данных и самого ответа, отформатированного в Markdown
-            await bot.send_message(message.chat.id, f"Некорректный ответ от GPT ({response_type}): ```{response}```", parse_mode='Markdown')
+        # Отправляем ответ пользователю
+        await bot.send_message(message.chat.id, response)
     except Exception as e:
         # Отправляем сообщение об ошибке, если произошла исключительная ситуация
         await bot.send_message(message.chat.id, f"{translations['error']}{str(e)}")
+
