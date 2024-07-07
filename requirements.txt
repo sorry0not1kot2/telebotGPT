@@ -2,3 +2,4 @@
 pyTelegramBotAPI
 g4f
 motor
+curl_cffi
