@@ -15,3 +15,4 @@ async def handle_text(message):
             await bot.send_message(message.chat.id, "Некорректный ответ от GPT")
     except Exception as e:
         await bot.send_message(message.chat.id, f"{translations['error']}{str(e)}")
+
