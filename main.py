@@ -9,7 +9,7 @@ bot = AsyncTeleBot(BOT_TOKEN)
 
 # Обработчик команды /start
 async def start(message):
-    await bot.send_message(message.chat.id, "Привет! Я бот на основе GPT-4. Спроси меня о чем угодно.")
+    await bot.send_message(message.chat.id, "Привет! Я ботGPT-4. Слушаю тебя.")
 
 # Добавление обработчиков
 bot.register_message_handler(start, commands=['start'])
