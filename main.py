@@ -13,7 +13,7 @@ async def start(message):
 
 # Добавление обработчиков
 bot.register_message_handler(start, commands=['start'])
-bot.register_message_handler(handlers.handle_text, content_types=['text'])
+bot.register_message_handler(lambda message: handlers.handle_text(bot, message), content_types=['text'])
 
 # Асинхронная функция main для запуска бота
 async def main():
