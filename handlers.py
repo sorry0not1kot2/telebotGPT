@@ -13,8 +13,9 @@ async def handle_text(bot, message):
             messages=[{"role": "user", "content": query}],
         )
        
-        # Отправляем ответ пользователю с парсингом Markdown V2
-        await bot.send_message(message.chat.id, response, parse_mode='MarkdownV2')
+        # Отправляем ответ пользователю с парсингом Markdown V1
+        await bot.send_message(message.chat.id, response, parse_mode='Markdown')
     except Exception as e:
         logging.error(f"Ошибка при обработке сообщения: {e}")
-        # Отправ
+        # Отправляем сообщение об ошибке, если произошла исключительная ситуация
+        await bot.send_message(message.chat.id, f"{translations['error']}{str(e)}", parse_mode='Markdown')
