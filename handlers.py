@@ -1,8 +1,7 @@
 import g4f
-from telebot.async_telebot import AsyncTeleBot
 import translations
 
-async def handle_text(message):
+async def handle_text(bot, message):
     query = message.text
     try:
         response = await g4f.ChatCompletion.create_async(
@@ -15,4 +14,3 @@ async def handle_text(message):
             await bot.send_message(message.chat.id, "Некорректный ответ от GPT")
     except Exception as e:
         await bot.send_message(message.chat.id, f"{translations['error']}{str(e)}")
-
