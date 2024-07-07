@@ -1,0 +1,4 @@
+# requirements.txt
+pyTelegramBotAPI
+g4f
+motor
