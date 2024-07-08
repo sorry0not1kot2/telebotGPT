@@ -1,6 +1,6 @@
 ## Гайд по бесплатному развертыванию Telegram-бота с GPT на GitHub Actions (для пользователей GitHub)
 
-Этот гайд поможет вам развернуть копию Telegram-бота с GPT, используя код из репозитория https://github.com/sorry0not1kot2/telebotGPT, на платформе GitHub Actions и использовать его бесплатно. 
+Этот гайд поможет вам развернуть копию Telegram-бота с GPT, используя код из репозитория https://github.com/sorry0not1kot2/telebotGPT, на платформе GitHub и использовать его бесплатно. 
 
 **Что вам понадобится:**
 
