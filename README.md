@@ -42,47 +42,16 @@
 
 1. В вашем репозитории на GitHub нажмите "Actions".
 2. Выберите "set up a workflow yourself".
-3. Скопировать из моего репозитория python-app.yml 
+3. Скопировать из моего репозитория файл:
+ requirements.txt из https://github.com/sorry0not1kot2/telebotGPT
+ и сохраните его у себя в репозитории рядом с файлом main.py
+И файл:
+python-app.yml 
 по адресу:
 https://github.com/sorry0not1kot2/telebotGPT/tree/main/.github/workflows
-Или самостоятельно отредактируйте свой, заменив весь текст в файле на следующий код:
-
-```yaml
-name: Python application
-
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-permissions:
-  contents: read
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-python@v5
-      with:
-        python-version: '3.10'
-    
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-        
-    - name: Run main.py
-      env:
-        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-      run: |
-        python main.py
-
-```
+Или самостоятельно отредактируйте созданный у вас python-app.yml, заменив весь текст в файле на  код из моего файла. 
  скачайте requirements.txt из https://github.com/sorry0not1kot2/telebotGPT
  и сохраните его у себя в репозитории рядом с файлом main.py
-
 4. Нажмите "Start commit", добавьте сообщение к коммиту (например, "Настройка GitHub Actions") и подтвердите.
 
 **Шаг 5: Запуск бота**
