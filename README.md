@@ -80,6 +80,8 @@ jobs:
         python main.py
 
 ```
+ скачайте requirements.txt из https://github.com/sorry0not1kot2/telebotGPT
+ и сохраните его у себя в репозитории рядом с файлом main.py
 
 4. Нажмите "Start commit", добавьте сообщение к коммиту (например, "Настройка GitHub Actions") и подтвердите.
 
