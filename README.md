@@ -42,7 +42,10 @@
 
 1. В вашем репозитории на GitHub нажмите "Actions".
 2. Выберите "set up a workflow yourself".
-3. Замените весь текст в файле на следующий код:
+3. Скопировать из моего репозитория python-app.yml 
+по адресу:
+https://github.com/sorry0not1kot2/telebotGPT/tree/main/.github/workflows
+Или самостоятельно отредактируйте свой, заменив весь текст в файле на следующий код:
 
 ```yaml
 name: Python application
